@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {SignUpInput , SubTitle , SignUpButton , SignUpWrapper} from '../../style/mainStyle'
+import {SignUpInput , SubTitle , SignUpButton , SignUpWrapper} from '../../style/otherStyle'
 
 function SignUpPassword(props){
     return(

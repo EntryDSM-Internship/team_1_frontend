@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { SubTitle , SignUpButton , SignUpWrapper , SignUpImg} from '../../style/mainStyle'
+import { SubTitle , SignUpButton , SignUpWrapper , SignUpImg} from '../../style/otherStyle'
 import fireWork from '../../picture/fireworks.png'
 import { Link } from 'react-router-dom'
 

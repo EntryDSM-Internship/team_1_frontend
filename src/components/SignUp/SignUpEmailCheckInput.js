@@ -1,18 +1,17 @@
-import React, { useRef } from 'react'
-import {SignUpInputDiv, SignUpInput , EmailCheckButton} from '../../style/mainStyle'
-import changeCheck from '../../modules/CheckInputValue'
+import React, { useState } from 'react'
+import {SignUpInputDiv,EmailInput , EmailCheckButton} from '../../style/otherStyle'
 
+let borderBottom;
 function SignUpEmailCheckInput(props){
-    let div;
+    const [load,reLoad] = useState(false);
     const inputFocus = ()=>{
-        console.log(div.style.borderBottom);
-        div.style.borderBottom = "1px solid #F59990";
+        borderBottom = "1px solid #F59990";
+        reLoad(true);
     }
     const outFocus = ()=>{
-        div.style.borderBottom = "";
+        borderBottom = "1px solid #707070;"
+        reLoad(false);  
     }
-
-    const Input = useRef(null);
 
     const CheckEmail = ()=>{
         try{
@@ -26,8 +25,8 @@ function SignUpEmailCheckInput(props){
     }
 
     return(
-        <SignUpInputDiv ref={ref => div = ref}>
-            <SignUpInput ref = {Input} width="400px" height="65px" bottom="0px" margin="0px" placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
+        <SignUpInputDiv borderBottom={borderBottom}>
+            <EmailInput placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
             <EmailCheckButton onClick={CheckEmail}>{props.button}</EmailCheckButton>
         </SignUpInputDiv>
     );

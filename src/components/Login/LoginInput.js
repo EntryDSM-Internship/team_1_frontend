@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {LoginInput , LoginErrorMessage , LoginButton} from '../../style/mainStyle';
+import {LoginInput , LoginErrorMessage , LoginButton} from '../../style/otherStyle';
 
 
 function LoginMain(){
