@@ -1,5 +1,5 @@
 import React from 'react'
-import {Background , Wrapper , FirstViewTitle , View , FirstViewButton , ButtonWrapper} from '../../style/mainStyle';
+import {Background , Wrapper , FirstViewTitle , View , FirstViewButton , ButtonWrapper} from '../../style/otherStyle';
 import { Link } from 'react-router-dom'
 
 function FirstView(){

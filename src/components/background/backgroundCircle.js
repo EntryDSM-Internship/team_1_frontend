@@ -1,5 +1,5 @@
 import React from 'react'
-import {BackgroundCircle} from '../../style/mainStyle'
+import {BackgroundCircle} from '../../style/otherStyle'
 
 function BackgroundCircles(){
     return(

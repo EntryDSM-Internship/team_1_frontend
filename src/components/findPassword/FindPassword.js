@@ -1,5 +1,5 @@
 import React , { useState }from 'react'
-import { View , SignUpBackground , SignUpBody } from '../../style/mainStyle';
+import { View , SignUpBackground , SignUpBody } from '../../style/otherStyle';
 import BackgroundCircles from '../background/backgroundCircle';
 import MainHeader from '../header/header';
 import FindPasswordEmail from './FindPasswordEmailCheck';

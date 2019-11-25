@@ -1,10 +1,9 @@
 import React , { useRef, useState } from 'react'
 import axios from 'axios'
-import { SignUpWrapper, SignUpButton, SubTitle } from '../../style/mainStyle'
+import { SignUpWrapper, SignUpButton, SubTitle } from '../../style/otherStyle'
 import SignUpEmailCheckInput from '../SignUp/SignUpEmailCheckInput'
 
 function FindPasswordEmail(props){
-    const Code = useRef(null);
     const [check, changeCheck] = useState(false);
     const CodeCheck = ()=>{
         if (check){
