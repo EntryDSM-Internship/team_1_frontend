@@ -3,7 +3,7 @@ import MainHeader from '../header/header'
 import BackgroundCircles from '../background/backgroundCircle'
 import LoginHelp from './LoginHelp';
 import LoginMain from './LoginInput'
-import {View ,LoginBackground ,LoginBody ,LoginWrapper} from '../../style/mainStyle'
+import {View ,LoginBackground ,LoginBody ,LoginWrapper} from '../../style/otherStyle'
 
 
 function FirstViewPage(props){

@@ -1,5 +1,5 @@
 import React , { useRef }from 'react'
-import { SignUpWrapper, SignUpButton, SubTitle , SignUpInput } from '../../style/mainStyle'
+import { SignUpWrapper, SignUpButton, SubTitle , SignUpInput } from '../../style/otherStyle'
 import CheckInputValue from '../../modules/CheckInputValue'
 
 function FindPasswordEmail(props){

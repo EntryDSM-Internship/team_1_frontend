@@ -1,5 +1,5 @@
 import React from 'react'
-import {LoginHelpButton , LoginHelpDiv , LoginHelpText} from '../../style/mainStyle';
+import {LoginHelpButton , LoginHelpDiv , LoginHelpText} from '../../style/otherStyle';
 import { Link } from 'react-router-dom'
 
 function LoginHelp(){

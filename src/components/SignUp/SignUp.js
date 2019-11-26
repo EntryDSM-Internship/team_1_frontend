@@ -1,6 +1,6 @@
 import React , { useState , useEffect , useRef } from 'react';
 import SignUpView from './SignUpView';
-import { SignUpPage } from '../../style/mainStyle'
+import { SignUpPage } from '../../style/otherStyle'
 
 function SignUp(props){
     const [page , changePage] = useState(1);

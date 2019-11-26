@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import SignUpEmailCheckInput from './SignUpEmailCheckInput'
-import { SignUpButton , SignUpWrapper , SubTitle} from '../../style/mainStyle'
+import { SignUpButton , SignUpWrapper , SubTitle} from '../../style/otherStyle'
 import CheckInputValue from '../../modules/CheckInputValue'
 
 function SignUpMain(props){
