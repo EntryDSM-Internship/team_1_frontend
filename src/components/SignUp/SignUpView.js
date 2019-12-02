@@ -1,12 +1,11 @@
 import React from 'react'
-import { View , SignUpBackground , SignUpBody } from '../../style/otherStyle'
+import { View , Background, SignUpBody } from '../../style/otherStyle'
 import BackgroundCircles from '../background/backgroundCircle'
 import MainHeader from '../header/header'
 import SignUpMain from './SignUpMain';
 import SignUpEmail from './SignUpEmail';
 import SignUpPassword from './SignUpPassword'
 import SignUpSuccess from './SignUpSuccess'
-
 function SignUpView(props){
     const signup = ()=>{
 
@@ -14,9 +13,8 @@ function SignUpView(props){
 
     return(
         <View>
-            <BackgroundCircles/>
             <MainHeader>회원가입하기</MainHeader>
-            <SignUpBackground>
+            <Background>
                 <SignUpBody>
                     {
                         props.page === 1 && <SignUpMain changePage={props.changePage}></SignUpMain> || 
@@ -25,8 +23,7 @@ function SignUpView(props){
                         props.page === 4 && <SignUpSuccess></SignUpSuccess>
                     }
                 </SignUpBody>
-            </SignUpBackground>
-            
+            </Background>
         </View>
     );
 }

@@ -29,8 +29,8 @@ function SignUpMain(props){
         <SignUpWrapper>
             <SubTitle>계정을 생성하세요.</SubTitle>
             <SignUpInput placeholder="성명" ref={ Name }/>
-            <SignUpInput placeholder="닉네임" ref={ NickName }/>
-            <SignUpEmailCheckInput placeholder="이메일" button="중복확인" changeCheck={changeCheck}></SignUpEmailCheckInput>
+            <SignUpInput placeholder="닉네임" ref={ NickName } maxLength="12"/>
+            <SignUpEmailCheckInput placeholder="이메일" button="중복확인" changeCheck={changeCheck} minLength="12" maxLength="30"></SignUpEmailCheckInput>
             <SignUpButton value="다음" type="button" onClick={InputCheck}/>
         </SignUpWrapper>
     );

@@ -6,8 +6,8 @@ function SignUpPassword(props){
     return(
         <SignUpWrapper>
             <SubTitle>비밀번호를 생성하세요.</SubTitle>
-            <SignUpInput placeholder="비밀번호"></SignUpInput>
-            <SignUpInput placeholder="비밀번호 확인"></SignUpInput>
+            <SignUpInput placeholder="비밀번호" maxLength="12"></SignUpInput>
+            <SignUpInput placeholder="비밀번호 확인" maxLength="12"></SignUpInput>
             <SignUpButton value="회원가입" type="button" onClick={props.changePage}/>
         </SignUpWrapper>
     );

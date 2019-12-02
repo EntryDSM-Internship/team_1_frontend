@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { SubTitle , SignUpButton , SignUpWrapper , SignUpImg} from '../../style/otherStyle'
-import fireWork from '../../picture/fireworks.png'
+import fireWork from '../../img/fireworks.png'
 import { Link } from 'react-router-dom'
 
 

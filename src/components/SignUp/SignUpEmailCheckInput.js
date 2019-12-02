@@ -26,7 +26,7 @@ function SignUpEmailCheckInput(props){
 
     return(
         <SignUpInputDiv borderBottom={borderBottom}>
-            <EmailInput placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
+            <EmailInput  minLength="12" maxLength="30" placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
             <EmailCheckButton onClick={CheckEmail}>{props.button}</EmailCheckButton>
         </SignUpInputDiv>
     );

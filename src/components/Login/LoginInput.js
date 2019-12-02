@@ -19,8 +19,8 @@ function LoginMain(){
     
     return(
         <>
-            <LoginInput placeholder="이메일" type="text"/>
-            <LoginInput placeholder="비밀번호" type="password"/>
+            <LoginInput requied placeholder="이메일" type="text"/>
+            <LoginInput requied placeholder="비밀번호" type="password"/>
             <LoginErrorMessage>다시 입력하세요</LoginErrorMessage>
             <LoginButton value="로그인" type="button" onClick={Login}/>
         </>
