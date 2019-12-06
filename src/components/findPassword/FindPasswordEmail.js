@@ -1,28 +1,34 @@
-import React , { useRef }from 'react'
-import { SignUpWrapper, SignUpButton, SubTitle , SignUpInput } from '../../style/otherStyle'
+import React , { useRef, useState }from 'react'
+import * as style from '../../style/otherStyle'
 import CheckInputValue from '../../modules/CheckInputValue'
 
-function FindPasswordEmail(props){
+function FindPasswordEmail({ChangePage}){
+
     const Email = useRef(null);
+    const [ error,errorChange ] = useState();
+    
     const EmailCheck = ()=>{
         if(CheckInputValue(Email.current)){
             try{
-                props.ChangePage();
+                ChangePage();
             } catch{
-                alert("없는 이메일 입니다");
+                errorChange("없는 이메일 입니다");
             }
         } else{
-            alert("이메일을 입력해 주세요");
+            errorChange("이메일을 입력해 주세요");
         }
     }
 
     return(
         <>
-            <SignUpWrapper>
-                <SubTitle>이메일을 다시 인증하세요.</SubTitle>
-                <SignUpInput placeholder="이메일" ref={Email}></SignUpInput>
-                <SignUpButton value="확인" type="button" onClick={EmailCheck}/>
-            </SignUpWrapper>
+            <style.SignUpWrapper width="680">
+                <style.SubTitle>이메일을 다시 인증하세요.</style.SubTitle>
+                <style.SignUpInput placeholder="이메일" ref={Email}/>
+                <style.ErrorMessageDiv>
+                    <style.ErrorMessage>{error}</style.ErrorMessage>
+                </style.ErrorMessageDiv>
+                <style.SignUpButton value="확인" type="button" onClick={EmailCheck}/>
+            </style.SignUpWrapper>
         </>
     );
 }
