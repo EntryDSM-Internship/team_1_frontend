@@ -1,34 +1,33 @@
 import React, { useState } from 'react'
-import {SignUpInputDiv,EmailInput , EmailCheckButton} from '../../style/otherStyle'
+import * as style from '../../style/otherStyle'
 
 let borderBottom;
 function SignUpEmailCheckInput(props){
-    const [load,reLoad] = useState(false);
+    const [input,inputChange] = useState(false);
+    const [isFocus,FocusChange] = useState(false);
+    
     const inputFocus = ()=>{
         borderBottom = "1px solid #F59990";
-        reLoad(true);
+        FocusChange(true);
     }
     const outFocus = ()=>{
         borderBottom = "1px solid #707070;"
-        reLoad(false);  
+        FocusChange(false);
     }
 
     const CheckEmail = ()=>{
         try{
             // 서버통신
             props.changeCheck(true);
-            alert("확인 되었습니다.");
         } catch(e){
-            console.log(e);
-            alert("존재하지 않는 이메일 입니다.");
         }
     }
 
     return(
-        <SignUpInputDiv borderBottom={borderBottom}>
-            <EmailInput  minLength="12" maxLength="30" placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
-            <EmailCheckButton onClick={CheckEmail}>{props.button}</EmailCheckButton>
-        </SignUpInputDiv>
+        <style.SignUpInputDiv borderBottom={borderBottom}>
+            <style.EmailInput  minLength="12" maxLength="30" placeholder={props.placeholder} onFocus={inputFocus} onBlur={outFocus}/>
+            <style.EmailCheckButton onClick={CheckEmail}>{props.button}</style.EmailCheckButton>
+        </style.SignUpInputDiv>
     );
 }
 
