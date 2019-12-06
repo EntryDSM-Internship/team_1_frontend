@@ -1,6 +1,6 @@
-import React , { useState , useEffect }from 'react'
-import { hart } from '../../../img/index'
-import * as style from '../../../style/TimeLineStyle'
+import React , { useState , useEffect } from 'react'
+import { hart } from '../../../../img/index'
+import * as style from '../../../../style/TimeLineStyle'
 
 function PostComment(){
     return(

@@ -1,30 +1,25 @@
 import React, { useRef } from 'react'
-import { TimeLineWriteImgButton, TimeLineWriteImgButtonLabel } from '../../../style/TimeLineStyle'
-import { img } from '../../../img/index';
-import TimeLineWriteImgs from './TimeLineWriteImg'
+import * as style from '../../../style/TimeLineStyle'
+import * as buttonImg from '../../../img';
 
-function WriteImgButton(props){
+function WriteImgButton({img,imgChange,LoadChange}){
 
     const getImg = (e)=>{
         let files = e.target.files;
         let imgs = [];
-        for(let i =0;i < files.length;i++){
+        for(let i = 0;i < files.length;i++){
             let file = files[i];
-            let reader = new FileReader();
-            reader.addEventListener("load",function(e){
-                imgs.push(e.target.result);
-                if(i+1 === files.length){
-                    props.ChangeOn(true)
-                    props.imgChange(...props.img,imgs);
-                }
-            })
-            reader.readAsDataURL(file);
+            imgs.push(URL.createObjectURL(file))
+            if(i+1 === files.length){
+                imgChange([...img,...imgs]);
+                LoadChange(true);   
+            }
         }
     }
     return(
-        <TimeLineWriteImgButtonLabel src={img}>
-            <TimeLineWriteImgButton multiple="multiple" type="file" onChange={getImg}/>
-        </TimeLineWriteImgButtonLabel>
+        <style.TimeLineWriteImgButtonLabel src={buttonImg.img}>
+            <style.TimeLineWriteImgButton multiple="multiple" type="file" onChange={getImg}/>
+        </style.TimeLineWriteImgButtonLabel>
     );
 }
 

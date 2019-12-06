@@ -1,16 +1,16 @@
-import React, { useState, useRef } from 'react'
-import { TimeLineWriteImg, TimeLinePostImgDelete, TimeLineWriteImgDiv } from '../../../style/TimeLineStyle'
+import React, { useState, useEffect } from 'react'
+import * as style from '../../../style/TimeLineStyle'
 
-function TimeLineWriteImgs(props){
-    props.del("");
+function TimeLineWriteImgs({name,url,indexChange}){
+    indexChange("")
     const imgDelete = (e)=>{
-        props.del(props.name)
+        indexChange(name)
     }
     return(
-            <TimeLineWriteImgDiv>
-                <TimeLineWriteImg src={props.url}/>
-                <TimeLinePostImgDelete onClick={imgDelete}>x</TimeLinePostImgDelete>
-            </TimeLineWriteImgDiv>
+            <style.TimeLineWriteImgDiv>
+                <style.TimeLineWriteImg src={url}/>
+                <style.TimeLinePostImgDelete onClick={imgDelete}>x</style.TimeLinePostImgDelete>
+            </style.TimeLineWriteImgDiv>
     );
 }
 
