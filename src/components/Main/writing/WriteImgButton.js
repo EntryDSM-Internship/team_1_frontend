@@ -5,10 +5,10 @@ import * as buttonImg from '../../../img';
 function WriteImgButton({img,imgChange,LoadChange}){
 
     const getImg = (e)=>{
-        let files = e.target.files;
-        let imgs = [];
+        const files = e.target.files;
+        const imgs = [];
         for(let i = 0;i < files.length;i++){
-            let file = files[i];
+            const file = files[i];
             imgs.push(URL.createObjectURL(file))
             if(i+1 === files.length){
                 imgChange([...img,...imgs]);
