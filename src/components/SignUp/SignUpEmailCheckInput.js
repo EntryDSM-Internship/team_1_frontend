@@ -1,18 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as style from '../../style/otherStyle'
 
 let borderBottom;
 function SignUpEmailCheckInput(props){
-    const [input,inputChange] = useState(false);
-    const [isFocus,FocusChange] = useState(false);
     
     const inputFocus = ()=>{
         borderBottom = "1px solid #F59990";
-        FocusChange(true);
     }
     const outFocus = ()=>{
         borderBottom = "1px solid #707070;"
-        FocusChange(false);
     }
 
     const CheckEmail = ()=>{
