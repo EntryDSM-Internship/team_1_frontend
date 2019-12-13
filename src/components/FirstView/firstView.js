@@ -1,33 +1,33 @@
 import React from 'react'
-import {Background , Wrapper , FirstViewTitle , View , FirstViewButton , ButtonWrapper} from '../../style/otherStyle';
+import * as style from '../../style/otherStyle';
 import { Link } from 'react-router-dom'
 
 function FirstView(){
     return(
-        <View display="flex">
-            <Background>
+        <style.View display="flex">
+            <style.Background>
                 <div>
-                    <FirstViewTitle>전세계에 있는 친구들과</FirstViewTitle>
-                    <FirstViewTitle>지금 무슨 일이 일어나고 있는</FirstViewTitle>
-                    <FirstViewTitle>확인하세요!</FirstViewTitle>
+                    <style.FirstViewTitle>전세계에 있는 친구들과</style.FirstViewTitle>
+                    <style.FirstViewTitle>지금 무슨 일이 일어나고 있는</style.FirstViewTitle>
+                    <style.FirstViewTitle>확인하세요!</style.FirstViewTitle>
                 </div>
-            </Background>
-            <Background color="white">
+            </style.Background>
+            <style.Background color="white">
                 <div>
-                <FirstViewTitle color="black" center="center">지금 바로 시작하세요.</FirstViewTitle>
-                <ButtonWrapper>
-                    <Wrapper>
+                <style.FirstViewTitle color="black" center="center">지금 바로 시작하세요.</style.FirstViewTitle>
+                <style.ButtonWrapper>
+                    <style.Wrapper>
                         <Link to="/SignUp">
-                            <FirstViewButton type="button" value="가입하기"></FirstViewButton>
+                            <style.FirstViewButton type="button" value="가입하기"></style.FirstViewButton>
                         </Link>
                         <Link to="/Login">
-                            <FirstViewButton type="button" value="로그인"></FirstViewButton>
+                            <style.FirstViewButton type="button" value="로그인"></style.FirstViewButton>
                         </Link>
-                    </Wrapper>
-                </ButtonWrapper>
+                    </style.Wrapper>
+                </style.ButtonWrapper>
                 </div>
-            </Background>
-        </View>
+            </style.Background>
+        </style.View>
     );
 }
 

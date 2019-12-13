@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header, HeaderText} from '../../style/otherStyle';
+import { Header, HeaderText } from '../../style/otherStyle';
 
 function MainHeader({children}){
     return(

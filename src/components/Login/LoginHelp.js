@@ -1,20 +1,20 @@
 import React from 'react'
-import {LoginHelpButton , LoginHelpDiv , LoginHelpText} from '../../style/otherStyle';
+import * as style from '../../style/otherStyle';
 import { Link } from 'react-router-dom'
 
 function LoginHelp(){
     return(
         <>
-            <LoginHelpDiv>
+            <style.LoginHelpDiv>
                 <Link to="/FindPassword">
-                    <LoginHelpButton>비밀번호를 잊으셨나요?</LoginHelpButton>
+                    <style.LoginHelpButton>비밀번호를 잊으셨나요?</style.LoginHelpButton>
                 </Link>
-                <LoginHelpText>비밀번호 재설정</LoginHelpText>
+                <style.LoginHelpText>비밀번호 재설정</style.LoginHelpText>
                 <Link to="/Signup">
-                    <LoginHelpButton>처음이신가요?</LoginHelpButton>
+                    <style.LoginHelpButton>처음이신가요?</style.LoginHelpButton>
                 </Link>
-                <LoginHelpText>회원 가입</LoginHelpText>
-            </LoginHelpDiv>
+                <style.LoginHelpText>회원 가입</style.LoginHelpText>
+            </style.LoginHelpDiv>
         </>
     );
 }

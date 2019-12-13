@@ -1,3 +1,5 @@
 export {default as friend} from './friend.png'
 export {default as search} from './search.png'
 export {default as home_hover} from './home_hover.png'
+export {default as img} from './img.png'
+export {default as hart} from './hart.png'

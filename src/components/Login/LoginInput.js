@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {LoginInput , LoginErrorMessage , LoginButton} from '../../style/otherStyle';
+import * as style from '../../style/otherStyle';
 
 
 function LoginMain(){
@@ -19,10 +19,10 @@ function LoginMain(){
     
     return(
         <>
-            <LoginInput placeholder="이메일" type="text"/>
-            <LoginInput placeholder="비밀번호" type="password"/>
-            <LoginErrorMessage>다시 입력하세요</LoginErrorMessage>
-            <LoginButton value="로그인" type="button" onClick={Login}/>
+            <style.LoginInput requied placeholder="이메일" type="text"/>
+            <style.LoginInput requied placeholder="비밀번호" type="password"/>
+            <style.ErrorMessage>다시 입력하세요</style.ErrorMessage>
+            <style.LoginButton value="로그인" type="button" onClick={Login}/>
         </>
     );
 }

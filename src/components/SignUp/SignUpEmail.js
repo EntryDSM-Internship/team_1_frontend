@@ -1,18 +1,20 @@
 import React, { useRef, useState } from 'react'
 import axios from 'axios'
 import SignUpEmailCheckInput from './SignUpEmailCheckInput'
-import { SignUpButton , SignUpWrapper , SubTitle} from '../../style/otherStyle'
-import CheckInputValue from '../../modules/CheckInputValue'
+import * as style from '../../style/otherStyle'
 
-function SignUpMain(props){
+function SignUpMain({changePage}){
+
     const [ check,changeCheck ] = useState(false);
+    const [ error, errorChange ] = useState("칸을 채워주세요");
 
     return(
-        <SignUpWrapper>
-            <SubTitle>이메일로 코드를 보내드렸습니다.</SubTitle>
-            <SignUpEmailCheckInput placeholder="인증번호" button="확인" changeCheck={changeCheck}></SignUpEmailCheckInput>
-            <SignUpButton value="다음" type="button" onClick={()=> {check ? props.changePage() : alert("이메일 체크 해주세요")}}/>
-        </SignUpWrapper>
+        <style.SignUpWrapper width="680">
+            <style.SubTitle>이메일로 코드를 보내드렸습니다.</style.SubTitle>
+            <SignUpEmailCheckInput placeholder="인증번호" button="확인" changeCheck={changeCheck}/>
+            <style.ErrorMessage>{error}</style.ErrorMessage>
+            <style.SignUpButton value="다음" type="button" onClick={()=> {check ? changePage() : errorChange("이메일 체크 해주세요")}}/>
+        </style.SignUpWrapper>
     );
 }
 

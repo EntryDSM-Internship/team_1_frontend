@@ -25,7 +25,7 @@ export const HeaderText = styled.p`
     font-weight:600;
 `
 
-export const LoginBackground = styled.div`
+export const Background = styled.div`
     background-color:#F59990;
     width:100%;
     height:90vh;
@@ -121,7 +121,7 @@ export const BackgroundCircle = styled.div`
 `
 /* First View */
 
-export const Background = styled(LoginBackground)`
+export const FirstViewBackground = styled(Background)`
     height:100vh;
     width:50%;
     color : white;
@@ -159,19 +159,16 @@ export const FirstViewButton = styled(LoginButton)`
 
 /* signup*/
 
-export const SignUpBackground = styled(LoginBackground)``
-
 export const SignUpBody = styled(LoginBody)``
 
 export const SignUpInput = styled(LoginInput)`
-    width:${props => props.width ? props.width : "477px"};
-    height:${props => props.height ? props.height : "70px"};
-    border-bottom:${props => props.bottom ? props.bottom : "1px solid #707070"};
-    /* margin:${props => props.margin ? props.margin : "30px"}; */
+    width:477px;
+    height:70px;
+    border-bottom: 1px solid #707070;
     margin:0px;
     margin-bottom:${props => props.margin ? props.margin : "30px"};
     &:focus{
-        border-bottom:${props => props.bottom ? props.bottom : "1px solid #F59990"}
+        border-bottom:1px solid #F59990
     }
 `
 
@@ -193,7 +190,7 @@ export const EmailCheckButton = styled.button`
 export const SignUpInputDiv = styled.div`
     width:477px;
     height:70px;
-    border-bottom:1px solid #707070;
+    border-bottom:${props => props.borderBottom ? props.borderBottom : "1px solid #707070"};
     display:flex;
     align-items:center;
 `
@@ -212,4 +209,14 @@ export const SubTitle = styled.p`
 
 export const SignUpImg = styled.img`
     margin:20px 100px 20px 100px;
+`
+
+export const EmailInput = styled(SignUpInput)`
+    width:400px;
+    height:70px;
+    margin:0px;
+    border-bottom:0;
+    &:focus{
+        border-bottom:0;
+    }
 `

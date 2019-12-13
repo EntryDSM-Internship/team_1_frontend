@@ -1,9 +1,9 @@
 import React from 'react'
-import MainHeader from '../header/header'
-import BackgroundCircles from '../background/backgroundCircle'
-import LoginHelp from './LoginHelp';
-import LoginMain from './LoginInput'
-import {View ,LoginBackground ,LoginBody ,LoginWrapper} from '../../style/otherStyle'
+import MainHeader from '../components/header/header'
+import BackgroundCircles from '../components/background/backgroundCircle'
+import LoginHelp from '../components/Login/LoginHelp';
+import LoginMain from '../components/Login/LoginInput'
+import {View ,LoginBody ,LoginWrapper, Background} from '../style/otherStyle'
 
 
 function FirstViewPage(props){
@@ -11,14 +11,14 @@ function FirstViewPage(props){
         <View>
             <BackgroundCircles/>
             <MainHeader>로그인 하기</MainHeader>
-            <LoginBackground>
+            <Background>
                 <LoginBody>
                     <LoginWrapper>
                         <LoginMain></LoginMain>
                         <LoginHelp></LoginHelp>
                     </LoginWrapper>
                 </LoginBody>
-            </LoginBackground>
+            </Background>
         </View>
     );
 }

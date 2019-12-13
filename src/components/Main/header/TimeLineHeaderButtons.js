@@ -1,14 +1,28 @@
 import React from 'react'
-import { TimeLineHeaderButtonDiv, TimeLineHeaderButton } from '../../../style/TimeLineStyle'
-import { friend, home_hover, search } from '../../../img'
+import { Link } from 'react-router-dom'
+import * as style from '../../../style/TimeLineStyle'
+import * as img from '../../../img'
 
-function TimeLineHeaderButtons(){
+function TimeLineHeaderButtons({home,friend,search}){
+    console.log(home,search,friend)
     return(
-            <TimeLineHeaderButtonDiv>
-                <TimeLineHeaderButton alt="" src={friend}></TimeLineHeaderButton>
-                <TimeLineHeaderButton alt="" src={home_hover}></TimeLineHeaderButton>
-                <TimeLineHeaderButton alt="" src={search}></TimeLineHeaderButton>
-            </TimeLineHeaderButtonDiv>
+            <style.TimeLineHeaderButtonDiv>
+                <Link to="/mypage">
+                    <style.TimeLineHeaderButton click={friend}>
+                        <style.TimeLineHeaderButtonImg src={friend ? img.friend_hover : img.friend} alt="마이페이지"/>
+                    </style.TimeLineHeaderButton>
+                </Link>
+                <Link to="/Main">
+                    <style.TimeLineHeaderButton click={home}>
+                        <style.TimeLineHeaderButtonImg src={home ? img.home_hover : img.home} alt="홈"/>
+                    </style.TimeLineHeaderButton>
+                </Link>
+                <Link to="/search">
+                    <style.TimeLineHeaderButton click={search}>
+                        <style.TimeLineHeaderButtonImg src={img.search} alt="검색"/>
+                    </style.TimeLineHeaderButton>
+                </Link>
+            </style.TimeLineHeaderButtonDiv>
     );
 }
 
