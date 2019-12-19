@@ -1,6 +1,7 @@
 import React from 'react'
 import * as style from '../../../style/TimeLineStyle'
 import TimeLineHeaderButtons from './TimeLineHeaderButtons'
+import { FollowRequest } from './FollowRequest'
 
 function TimeLineHeader({home,search,friend}){
     return(
@@ -10,7 +11,8 @@ function TimeLineHeader({home,search,friend}){
             </style.TimeLineSide>
             <TimeLineHeaderButtons home={home} search={search} friend={friend}></TimeLineHeaderButtons>
             <style.TimeLineSide>
-                <style.TimeLineWriteButton>글쓰기</style.TimeLineWriteButton>
+                <FollowRequest/>
+                <style.TimeLineWriteButton width="200" height="60">글쓰기</style.TimeLineWriteButton>
             </style.TimeLineSide>
         </style.TimeLineHeaderDiv>
     );

@@ -4,7 +4,6 @@ import * as style from '../../../style/TimeLineStyle'
 import * as img from '../../../img'
 
 function TimeLineHeaderButtons({home,friend,search}){
-    console.log(home,search,friend)
     return(
             <style.TimeLineHeaderButtonDiv>
                 <Link to="/mypage">

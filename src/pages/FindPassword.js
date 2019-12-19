@@ -1,8 +1,8 @@
 import React , { useState }from 'react'
-import { View , SignUpBody, Background } from '../style/otherStyle';
-import BackgroundCircles from '../components/background/backgroundCircle';
+import * as style from '../style/otherStyle';
+// import { BackgroundCircle } from '../components/background';
 import MainHeader from '../components/header/header';
-import { FindPasswordEmail, FindPasswordEmailCode , FindPasswordPassword, FindPasswordSuccess} from '../components/findPassword/page'
+import * as component from '../components/findPassword'
 
 function SignUpView(props){
     const [page,changePage] = useState(1);
@@ -12,21 +12,21 @@ function SignUpView(props){
     }
 
     return(
-        <View>
-            <BackgroundCircles/>
+        <style.View>
+            <style.BackgroundCircle/>
             <MainHeader>비밀번호 재설정</MainHeader>
-            <Background>
-                <SignUpBody>
+            <style.Background>
+                <style.SignUpBody>
                     {
-                        page === 1 && <FindPasswordEmailCode ChangePage={ChangePage}></FindPasswordEmailCode> ||
-                        page === 2 && <FindPasswordEmail ChangePage={ChangePage}></FindPasswordEmail> ||
-                        page === 3 && <FindPasswordPassword ChangePage={ChangePage}></FindPasswordPassword> ||
-                        page === 4 && <FindPasswordSuccess></FindPasswordSuccess>
+                        page === 1 && <component.FindPasswordEmail ChangePage={ChangePage}/> ||
+                        page === 2 && <component.FindPasswordEmailCode ChangePage={ChangePage}/> ||
+                        page === 3 && <component.FindPasswordPassword ChangePage={ChangePage}/> ||
+                        page === 4 && <component.FindPasswordSuccess/>
                     }
-                </SignUpBody>
-            </Background>
+                </style.SignUpBody>
+            </style.Background>
             
-        </View>
+        </style.View>
     );
 }
 

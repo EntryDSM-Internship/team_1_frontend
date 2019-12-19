@@ -1,28 +1,31 @@
 import React , { useState , useEffect , useRef } from 'react';
-import SignUpView from '../components/SignUp/SignUpView';
-import { SignUpPage } from '../style/otherStyle'
+import * as style from '../style/otherStyle'
+import { Header } from '../components/header'
+import * as component from '../components/SignUp'
+
 
 function SignUp(props){
     const [page , changePage] = useState(1);
-    let pages = useRef(null);
-    const ChangePage = () =>{
+
+    const nextPage = ()=>{
         changePage(page+1);
-        // console.log(page);
     }
 
-    const movePage = ()=>{
-        console.log(pages);
-    }
-
-    useEffect(()=>{
-        movePage();
-    })
     return(
-        <>
-            <SignUpPage>
-                <SignUpView page={page} changePage={ChangePage}></SignUpView>
-            </SignUpPage>
-        </>
+        <style.View>
+            <Header>회원가입하기</Header>
+            <style.Background>
+                <style.SignUpBody>
+                    {
+                        page === 1 && <component.SignUpMain changePage={nextPage}/> || 
+                        page === 2 && <component.SignUpEmail changePage={nextPage}/> ||
+                        page === 3 && <component.SignUpPassword changePage={nextPage}/> ||
+                        page === 4 && <component.SignUpPro changePage={nextPage}/> ||
+                        page === 5 && <component.SignUpSuccess/>
+                    }
+                </style.SignUpBody>
+            </style.Background>
+        </style.View>
     );
 }
 

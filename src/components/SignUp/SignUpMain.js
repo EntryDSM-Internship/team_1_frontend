@@ -1,15 +1,15 @@
 import React, { useRef , useState } from 'react'
 import axios from 'axios'
-import SignUpEmailCheckInput from './SignUpEmailCheckInput'
 import * as style from '../../style/otherStyle'
 import CheckInputValue from '../../modules/CheckInputValue'
+import  EmailCheckInput from '../public/EmailCheckInput'
 
 function SignUpMain({changePage}){
 
     const Name = useRef(null);
     const NickName = useRef(null);
     const [ check , changeCheck ] = useState(false);
-    const [ error , changeError ] = useState("칸을 채워주세요");
+    const [ error , changeError ] = useState("");
 
     const InputCheck = ()=>{
         if(!CheckInputValue(Name.current)){
@@ -33,8 +33,10 @@ function SignUpMain({changePage}){
             <style.SubTitle>계정을 생성하세요.</style.SubTitle>
             <style.SignUpInput placeholder="성명" ref={ Name }/>
             <style.SignUpInput placeholder="닉네임" ref={ NickName } maxLength="12"/>
-            <SignUpEmailCheckInput placeholder="이메일" button="중복확인" changeCheck={changeCheck} minLength="12" maxLength="30"/>
-            <style.ErrorMessage>{error}</style.ErrorMessage>
+            <EmailCheckInput placeholder="이메일" button="중복확인" changeCheck={changeCheck} minLength="12" maxLength="30"></EmailCheckInput>
+            <style.ErrorMessageDiv>
+                <style.ErrorMessage>{error}</style.ErrorMessage>
+            </style.ErrorMessageDiv>
             <style.SignUpButton value="다음" type="button" onClick={InputCheck}/>
         </style.SignUpWrapper>
     );
