@@ -1,25 +1,25 @@
 import React from 'react'
 import MainHeader from '../components/header/header'
-import BackgroundCircles from '../components/background/backgroundCircle'
+import BackgroundCircle from '../components/background/backgroundCircle'
 import LoginHelp from '../components/Login/LoginHelp';
 import LoginMain from '../components/Login/LoginInput'
-import {View ,LoginBody ,LoginWrapper, Background} from '../style/otherStyle'
+import * as style from '../style/otherStyle'
 
 
 function FirstViewPage(props){
     return(
-        <View>
-            <BackgroundCircles/>
+        <style.View>
+            <BackgroundCircle/>
             <MainHeader>로그인 하기</MainHeader>
-            <Background>
-                <LoginBody>
-                    <LoginWrapper>
-                        <LoginMain></LoginMain>
-                        <LoginHelp></LoginHelp>
-                    </LoginWrapper>
-                </LoginBody>
-            </Background>
-        </View>
+            <style.Background>
+                <style.LoginBody>
+                    <style.LoginWrapper>
+                        <LoginMain/>
+                        <LoginHelp/>
+                    </style.LoginWrapper>
+                </style.LoginBody>
+            </style.Background>
+        </style.View>
     );
 }
 

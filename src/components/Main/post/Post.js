@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import PostMain from './PostMain'
-import PostComment from './PostComment'
+import * as style from '../../../style/TimeLineStyle'
+import { PostComment } from './Comment'
 import { TimeLinePost } from '../../../style/TimeLineStyle'
+import { CommentView } from './CommentView'
 
 function Post(){
 
@@ -9,8 +11,11 @@ function Post(){
 
     return(
         <TimeLinePost>
-            <PostMain></PostMain>
+            <PostMain text="hello world" user="오준상" userImg=""></PostMain>
             <PostComment></PostComment>
+            <style.CommentView>
+                <CommentView text="닥스훈트가 최고시다" user="오준상" userImg=""></CommentView>
+            </style.CommentView>
         </TimeLinePost>
     );
 }
