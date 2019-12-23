@@ -3,10 +3,11 @@ import styled from 'styled-components'
 /* Login */
 
 export const View = styled.div`
-    width:100%;
-    height:100%;
+    width:auto;
+    height:auto;
     overflow:hidden;
     display:${props=>props.display ? props.display : "block"};
+    min-width:700px;
 `
 
 export const Header = styled.div`
@@ -16,6 +17,7 @@ export const Header = styled.div`
     z-index:1;
     background-color:white;
     position:relative;
+    min-width:700px;
 `
 
 export const HeaderText = styled.p`
@@ -28,10 +30,11 @@ export const HeaderText = styled.p`
 export const Background = styled.div`
     background-color:#F59990;
     width:100%;
-    height:90vh;
+    height:${props => props.height ? props.height : "90vh"};
     display:flex;
     justify-content:center;
     align-items:center;
+    min-width:700px;
 `
 
 export const LoginBody = styled.div`
@@ -81,12 +84,18 @@ export const LoginButton = styled.input`
         color:white;
     }
 `
+export const ErrorMessageDiv = styled.div`
+    height:20px;
+    width: 477px;
+`
 
-export const LoginErrorMessage = styled.p`
-    width:100%;
+export const ErrorMessage = styled.p`
+    width:477px;
+    height:27px;
     font-size:20px;
     font-weight:600;
     margin-left:15px;
+    margin-top:10px;
 `
 
 export const LoginHelpButton = styled.button`
@@ -104,6 +113,11 @@ export const LoginHelpDiv = styled.div`
 `
 
 export const LoginHelpText = styled.p`
+    font-size:18px;
+    color:#707070;
+`
+
+export const LoginErrorMessage = styled.p`
     font-size:18px;
     color:#707070;
 `
@@ -172,12 +186,10 @@ export const SignUpInput = styled(LoginInput)`
     }
 `
 
-export const SignUpErrorMessage = styled(LoginErrorMessage)``
-
 export const SignUpButton = styled(LoginButton)``
 
 export const SignUpWrapper = styled(LoginWrapper)`
-    width:680px;
+    width:${props => props.width ? props.width : "480"}px;
 `
 
 export const EmailCheckButton = styled.button`
@@ -219,4 +231,17 @@ export const EmailInput = styled(SignUpInput)`
     &:focus{
         border-bottom:0;
     }
+`
+
+export const SignUpUserProImg = styled.label`
+    width:200px;
+    height:200px;
+    border-radius:100px;
+    border:1px solid #707070;
+    background-position: center;
+    margin-top:50px;
+`
+
+export const SignUpUserProButton = styled.input`
+    display:none;
 `
