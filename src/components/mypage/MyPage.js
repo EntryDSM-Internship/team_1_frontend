@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Background } from '../../style/otherStyle'
 import { Header } from '../Main/header'
 import * as style from '../../style/mypageStyle'
-import * as profile from './profile'
+import { MypageUserInfo, MypageFollowInfo, MypageModify, MypageUserImg } from './profile'
 import { Post } from '../Main/post'
 
 function MyPage(){
@@ -13,17 +13,14 @@ function MyPage(){
             <Background height="auto">
                 <style.MyPageBody>
                     <style.MypagePro>
-                        <label>
-                            <style.MyPageProImg alt="프로필 사진" src="https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK.png"/>
-                            <style.MyPageProImgInput type="file"/>
-                        </label>
+                        <MypageUserImg/>
                         <style.MypageInfo>
-                            <profile.MypageUserInfo/>
-                            <profile.MypageFollowInfo/>
-                            <profile.MypageModify/>
+                            <MypageUserInfo/>
+                            <MypageFollowInfo/>
+                            <MypageModify/>
                         </style.MypageInfo>
                     </style.MypagePro>
-                    <Post></Post>
+                    <Post/>
                 </style.MyPageBody>
             </Background>
         </div>

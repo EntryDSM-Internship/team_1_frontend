@@ -1,11 +1,11 @@
 import React from 'react'
-import { MypageInfoButton, MypageInfoWrapper } from '../../../style/mypageStyle'
+import * as style from '../../../style/mypageStyle'
 
 function MypageModify(){
     return(
-        <MypageInfoWrapper display="flex-end">
-            <MypageInfoButton>수정하기</MypageInfoButton>
-        </MypageInfoWrapper>
+        <style.MypageInfoWrapper display="flex-end">
+            <style.MypageInfoButton>수정하기</style.MypageInfoButton>
+        </style.MypageInfoWrapper>
     );
 }
 
