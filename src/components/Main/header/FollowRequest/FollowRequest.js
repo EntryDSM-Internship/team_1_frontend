@@ -19,18 +19,10 @@ function FollowRequest(){
     }
 
     useEffect(()=>{
-        changeData([
-            <FollowRequestContent index={0} user="김어진" img="" indexChange={indexChange}></FollowRequestContent>,
-            <FollowRequestContent index={1} user="오준상" img="" indexChange={indexChange}></FollowRequestContent>
-        ])
-    },[])
-
-    useEffect(()=>{
         let data = [];
         if(deleteIndex >= 0){
             requestData.map((e)=>{
                 if(e.props.index !== deleteIndex){
-                    console.log(e.props.index , deleteIndex)
                     data.push(e);
                     return e;
                 }
@@ -38,14 +30,7 @@ function FollowRequest(){
             changeData(data);
         }
     },[deleteIndex])
-
-    useEffect(()=>{
-        console.log(requestData);
-    })
-
-    const buttonFocusOut = ()=>{
-        clickChange("none");
-    }
+    
     return(
         <>
             <style.FollowRequestLabel src={img.bell}>
