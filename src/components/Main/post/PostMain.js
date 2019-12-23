@@ -2,16 +2,22 @@ import React, { useState } from 'react'
 import * as style from '../../../style/TimeLineStyle'
 import * as img from '../../../img'
 
-function PostMain(){
+function PostMain({text,user,userImg,postImg}){
 
+    let imgExample = ["https://dbscthumb-phinf.pstatic.net/3006_000_1/20140409152330110_VVU1Z2V6A.jpg/DK010.jpg?type=m4500_4500_fst_n","https://t1.daumcdn.net/cfile/tistory/99954A3F5CDEA26A1B","https://t1.daumcdn.net/cfile/tistory/99954A3F5CDEA26A1B"];
+    
+    let PostImg = imgExample.map((i)=>{
+        return <style.TimeLinePostImg src={i} alt="게시물 이미지"/>
+    })
+    
     const [isHover,HoverChange] = useState();
 
     return(
         <>
                 <style.TimeLinePostUser>
                     <style.TimeLinePostUserDiv>
-                        <style.TimeLinePostUserImg alt="" src="https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK.png"/>
-                        <style.TimeLinePostUserName>오준상</style.TimeLinePostUserName>
+                        <style.TimeLinePostUserImg alt="" src={userImg}/>
+                        <style.TimeLinePostUserName>{user}</style.TimeLinePostUserName>
                     </style.TimeLinePostUserDiv>
                     <style.TimeLinePostUserDiv>  
                         <style.TimeLinePostTime>2019.12.12</style.TimeLinePostTime>
@@ -21,17 +27,10 @@ function PostMain(){
                     </style.TimeLinePostUserDiv>
                 </style.TimeLinePostUser>
                 <style.TimeLinePostText>
-                    hello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
-                    ello world hello world hello world hello world hello world hello world
+                    {text}
                 </style.TimeLinePostText>
                 <style.TimeLinePostImgDiv>
-                    <style.TimeLinePostImg src="https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK.png" alt=""/>
-                    <style.TimeLinePostImg src="https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK.png" alt=""/>
+                    {PostImg}
                 </style.TimeLinePostImgDiv>
         </>
     );
