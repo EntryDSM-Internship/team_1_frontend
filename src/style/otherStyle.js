@@ -91,7 +91,6 @@ export const ErrorMessageDiv = styled.div`
 
 export const ErrorMessage = styled.p`
     width:477px;
-    height:27px;
     font-size:20px;
     font-weight:600;
     margin-left:15px;
