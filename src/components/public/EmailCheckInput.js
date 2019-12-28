@@ -19,10 +19,8 @@ function EmailCheckInput({changeCheck,button,placeholder}){
         try{
             // 서버통신
             changeCheck(true);
-            alert("확인 되었습니다.");
         } catch(e){
             console.log(e);
-            alert("존재하지 않는 이메일 입니다.");
         }
     }
 

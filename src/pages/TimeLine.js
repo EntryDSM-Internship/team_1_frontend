@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Header, Post, Write } from '../components/Main'
 import * as style from '../style/TimeLineStyle'
-import * as getAll from 'getallelements'
 
 function TimeLine(){
     const MainDiv = useRef();
@@ -10,9 +9,6 @@ function TimeLine(){
 
     useEffect(()=>{
         heightChange(MainDiv.current.offsetHeight);
-        console.log(getAll.getAllElementByClass());
-        console.log(getAll.getAllElementById());
-        console.log(getAll.getAllElementByTagName());
     })
 
 
