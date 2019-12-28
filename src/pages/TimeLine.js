@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Header, Post, Write } from '../components/Main'
 import * as style from '../style/TimeLineStyle'
 
-
 function TimeLine(){
     const MainDiv = useRef();
     const [height,heightChange] = useState();

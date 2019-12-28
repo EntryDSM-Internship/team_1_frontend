@@ -12,6 +12,7 @@ export const TimeLineHeaderDiv = styled.div`
     align-items:center;
     background-color:white;
     position:fixed;
+    z-index:2;
 `
 
 export const TimeLineHeaderButtonDiv = styled.div`
@@ -320,7 +321,7 @@ export const TimeLineHeaderFollowRequest = styled.div`
     width:400px;
     background-color:white;
     position: absolute;
-    display:${props => props.display};
+    display:${props => props.display ? "block" : "none"};
     transform : translate(-250px,320px);
 `
 
@@ -332,7 +333,7 @@ export const FollowRequestTriangle = styled.div`
     border-bottom: 100px solid #FA8686; 
     position:absolute;
     transform:translate(-120px,90px);
-    display:${props => props.display};
+    display:${props => props.display ? "block" : "none"};
 `
 
 export const FollowRequestLabel = styled.label`
