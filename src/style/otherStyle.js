@@ -91,6 +91,7 @@ export const ErrorMessageDiv = styled.div`
 
 export const ErrorMessage = styled.p`
     width:477px;
+    height:27px;
     font-size:20px;
     font-weight:600;
     margin-left:15px;
@@ -232,7 +233,7 @@ export const EmailInput = styled(SignUpInput)`
     }
 `
 
-export const SignUpUserProImg = styled.label`
+export const SignUpUserProImg = styled.img`
     width:200px;
     height:200px;
     border-radius:100px;

@@ -52,18 +52,20 @@ export const FollowerViewContentDiv = styled.div`
 
 export const FollowerViewContents = styled.div`
     width:100%;
-    height:813px;
+    height:auto;
+    overflow:scroll;
 `
 
 export const FollowerViewImg = styled.img`
-    width:135px;
-    height:135px;
+    width:125px;
+    height:125px;
     border-radius:70px;
     box-shadow:0px 0px 5px 1px #707070;
+    margin-right:20px;
 `
 
 export const FollowerViewUserName = styled.p`
-    font-size:40px;
+    font-size:25px;
     font-weight:600;
     color:#757575;
 `
@@ -91,4 +93,8 @@ export const FollowerViewSide = styled.div`
     justify-content:${props => props.display};
     align-items:center;
     /* margin:50px; */
+`
+
+export const FollowerViewWrapper = styled.div`
+    overflow:hidden;
 `
