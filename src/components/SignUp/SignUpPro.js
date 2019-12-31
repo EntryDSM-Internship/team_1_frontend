@@ -4,11 +4,28 @@ import * as style from '../../style/otherStyle'
 import { Link } from 'react-router-dom'
 
 
-function SignUpPro({changePage}){
-    let [img,imgChange] = useState("");
-    const putImg = function(e){
+function SignUpPro({changePage,nickName}){
+    const [img,imgChange] = useState("http://www.bestianwoosong.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png");
+    const [formData,formDataChange] = useState();
+    
+    const putImg = (e) => {
         const file = e.target.files[0];
-        imgChange(URL.createObjectURL(file));
+        const form = new FormData();
+        if(file){
+            form.append("img",file);
+            formDataChange(form);
+            imgChange(URL.createObjectURL(file));
+        } else{
+            imgChange(undefined);
+        }
+    }
+    
+    const setImg = ()=>{
+        console.log(formData);
+        axios.post(`http://10.156.147.200:3000/api/user/profile/${nickName}`,formData)
+        .then(()=>{
+            changePage();
+        })
     }
 
     return(
@@ -18,7 +35,7 @@ function SignUpPro({changePage}){
                 <style.SignUpUserProImg src={img}/>
                 <style.SignUpUserProButton type="file" onChange={putImg}/>
             </label>
-            <style.SignUpButton value="다음" type="button" onClick={changePage}/>
+            <style.SignUpButton value="다음" type="button" onClick={setImg}/>
         </style.SignUpWrapper>
     );
 }
