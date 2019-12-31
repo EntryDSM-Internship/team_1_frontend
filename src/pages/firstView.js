@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import * as style from '../style/otherStyle';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function FirstView(){
+    
     return(
         <style.View display="flex">
             <style.FirstViewBackground>
