@@ -169,6 +169,7 @@ export const TimeLinePostDelete = styled.button`
 export const Background = styled.div`
     background-color:#F59990;
     width:100%;
+    height:auto;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -182,6 +183,9 @@ export const TimeLineMain = styled.div`
     justify-content:center;
     background-color:white;
     margin-top:10vh;
+    height:90vh;
+    /* height:${props => props.height ? "auto" : "90vh"}; */
+    overflow:hidden;
 `
 export const TimeLinePostCommentDiv = styled.div`
     width:900px;
@@ -238,7 +242,7 @@ export const TimeLinePostImgDelete = styled.button`
 
 export const TimeLineWriteDiv = styled.div`
     width:1000px;
-    /* height:200px; */
+    height:${props => props.height ? "462px" : "200px"};
     box-shadow:0px 0px 3px 1px #787078;
     margin:20px;
     border-radius:3px;
@@ -315,14 +319,19 @@ export const TimeLineBlur = styled.div`
     display:${props => props.click ? "block" : "none"};
     transition:all 2s;
 `
-
 export const TimeLineHeaderFollowRequest = styled.div`
     height:500px;
     width:400px;
     background-color:white;
     position: absolute;
     display:${props => props.display ? "block" : "none"};
-    transform : translate(-250px,320px);
+    transform : translate(-100px,320px);
+    box-shadow:0px 0px 10px 0.1px #707070;
+`
+
+export const FollowRequestDiv = styled.div`
+    display:${props => props.display ? "block" : "none"};
+    box-shadow:0px 0px 3px 1px #787078;
 `
 
 export const FollowRequestTriangle = styled.div`
@@ -332,7 +341,7 @@ export const FollowRequestTriangle = styled.div`
     border-right: 50px solid transparent;
     border-bottom: 100px solid #FA8686; 
     position:absolute;
-    transform:translate(-120px,90px);
+    transform:translate(0px,90px);
     display:${props => props.display ? "block" : "none"};
 `
 
@@ -448,4 +457,19 @@ export const CommentViewUserName = styled.p`
     font-size:22px;
     color:#707070;
     font-weight:600;
+`
+
+export const TimeLinePostWrapper = styled.div`
+    overflow:scroll;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+`
+
+export const TimeLinePostScroll = styled.div`
+    overflow:scroll;
+    height:90vh;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `

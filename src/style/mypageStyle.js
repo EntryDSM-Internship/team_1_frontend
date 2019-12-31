@@ -2,13 +2,12 @@ import styled from 'styled-components'
 
 export const MyPageBody = styled.div`
     width:1154px;
-    height:auto;
+    height:${props => props.height ? "auto" : "90vh"};
     display:flex;
     justify-content:center;
     align-items:center;
     background-color:white;
     z-index:1;
-    margin-top:10vh;
     flex-wrap:wrap;
 `
 
@@ -105,4 +104,15 @@ export const MypageInfoButton = styled.button`
     font-size:20px;
     background-color:#F59990;
     margin:10px;
+`
+
+export const Background = styled.div`
+    background-color:#F59990;
+    width:100%;
+    height:${props => props.height ? props.height : "90vh"};
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-width:700px;
+    padding-top:10vh;
 `
