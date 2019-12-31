@@ -5,16 +5,14 @@ import { PostComment } from './Comment'
 import { TimeLinePost } from '../../../style/TimeLineStyle'
 import { CommentView } from './CommentView'
 
-function Post(){
-
-    let dummyData = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png";
+function Post({postInfo,access_token}){
 
     return(
         <TimeLinePost>
-            <PostMain text="hello world" user="오준상" userImg=""></PostMain>
-            <PostComment></PostComment>
+            <PostMain contentImg={postInfo.contentImg} text={postInfo.content} user={postInfo.nick} isLike={postInfo.isLike} isMine={postInfo.isMine} profile={postInfo.profile}></PostMain>
+            <PostComment isLike={postInfo.isLike}postId={postInfo.postId} access_token={access_token}/>
             <style.CommentView>
-                <CommentView text="닥스훈트가 최고시다" user="오준상" userImg={dummyData}></CommentView>
+                {/* <CommentView text="닥스훈트가 최고시다" user="오준상"></CommentView> */}
             </style.CommentView>
         </TimeLinePost>
     );
