@@ -1,16 +1,16 @@
 import React from 'react'
 import * as style from '../../../style/mypageStyle'
 
-function MypageFollowInfo(){
+function MypageFollowInfo({userInfo,userInfoChange}){
     return(
         <style.MypageInfoWrapper>
-        <style.MypageInfoFollow>
+        <style.MypageInfoFollow onClick={()=>{window.location.href="/follow"}}>
             <p>팔로워</p>
-            <style.MypageInfoColoredText>45</style.MypageInfoColoredText>
+            <style.MypageInfoColoredText>{userInfo.follower}</style.MypageInfoColoredText>
             </style.MypageInfoFollow>
-        <style.MypageInfoFollow>
-            <p>팔로워</p>
-            <style.MypageInfoColoredText>1</style.MypageInfoColoredText>
+        <style.MypageInfoFollow onClick={()=>{window.location.href="/follow"}}>
+            <p>팔로잉</p>
+            <style.MypageInfoColoredText>{userInfo.following}</style.MypageInfoColoredText>
             </style.MypageInfoFollow>
         </style.MypageInfoWrapper>
     );

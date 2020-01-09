@@ -4,8 +4,19 @@ import { Header } from '../components/header'
 import * as component from '../components/SignUp'
 
 
-function SignUp(props){
+function SignUp(){
     const [page , changePage] = useState(1);
+    const [email, emailChange] = useState();
+    const [name, nameChange] = useState();
+    const [nick, nickNameChange] = useState();
+    const [password, passwordChange] = useState();
+
+    const data = {
+        name,
+        nick,
+        email,
+        password,
+    }
 
     const nextPage = ()=>{
         changePage(page+1);
@@ -17,10 +28,10 @@ function SignUp(props){
             <style.Background>
                 <style.SignUpBody>
                     {
-                        page === 1 && <component.SignUpMain changePage={nextPage}/> || 
+                        page === 1 && <component.SignUpMain nameChange={nameChange} emailChange={emailChange} nickNameChange={nickNameChange} changePage={nextPage}/> || 
                         page === 2 && <component.SignUpEmail changePage={nextPage}/> ||
-                        page === 3 && <component.SignUpPassword changePage={nextPage}/> ||
-                        page === 4 && <component.SignUpPro changePage={nextPage}/> ||
+                        page === 3 && <component.SignUpPassword passwordChange={passwordChange} changePage={nextPage} data={data}/> ||
+                        page === 4 && <component.SignUpPro nickName={nick} changePage={nextPage}/> ||
                         page === 5 && <component.SignUpSuccess/>
                     }
                 </style.SignUpBody>

@@ -1,22 +1,20 @@
-import React, { useState } from 'react'
-import * as style from '../../../style/TimeLineStyle'
-import * as img from '../../../img'
+import React, { useState } from 'react';
+import * as style from '../../../style/TimeLineStyle';
+import * as img from '../../../img';
 
-function PostMain({text,user,userImg,postImg}){
+function PostMain({text,user,profile,contentImg,isLike,isMine}){
 
-    let imgExample = ["https://dbscthumb-phinf.pstatic.net/3006_000_1/20140409152330110_VVU1Z2V6A.jpg/DK010.jpg?type=m4500_4500_fst_n","https://t1.daumcdn.net/cfile/tistory/99954A3F5CDEA26A1B","https://t1.daumcdn.net/cfile/tistory/99954A3F5CDEA26A1B"];
-    
-    let PostImg = imgExample.map((i)=>{
-        return <style.TimeLinePostImg src={i} alt="게시물 이미지"/>
+    let count = 0;
+    let PostImg = contentImg.map((i)=>{
+        return <style.TimeLinePostImg key={count++} src={`http://10.156.147.200:3000/${i}`} alt="게시물 이미지"/>
     })
-    
     const [isHover,HoverChange] = useState();
 
     return(
         <>
                 <style.TimeLinePostUser>
                     <style.TimeLinePostUserDiv>
-                        <style.TimeLinePostUserImg alt="" src={userImg}/>
+                        <style.TimeLinePostUserImg alt="" src={`http://10.156.147.200:3000/${profile}`}/>
                         <style.TimeLinePostUserName>{user}</style.TimeLinePostUserName>
                     </style.TimeLinePostUserDiv>
                     <style.TimeLinePostUserDiv>  
